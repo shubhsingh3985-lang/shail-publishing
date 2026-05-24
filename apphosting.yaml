@@ -1,4 +1,5 @@
 # apphosting.yaml
+configVersion: 1
 
 runConfig:
   minInstances: 0
