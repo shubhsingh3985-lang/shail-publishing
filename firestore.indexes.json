@@ -1,0 +1,148 @@
+// {
+//   "indexes": [
+
+//     // ─── books: status + createdAt ────────────────────────────────────────────
+//     // Used by: getAllBooks(), getRecentBooks()
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "status",    "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt", "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: status + featured + createdAt ────────────────────────────────
+//     // Used by: getFeaturedBooks()
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "status",    "order": "ASCENDING"  },
+//         { "fieldPath": "featured",  "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt", "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: categorySlug + status + createdAt ────────────────────────────
+//     // Used by: getBooksByCategory() default sort
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "categorySlug", "order": "ASCENDING"  },
+//         { "fieldPath": "status",       "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt",    "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: categorySlug + status + price ────────────────────────────────
+//     // Used by: category page sort by price
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "categorySlug", "order": "ASCENDING" },
+//         { "fieldPath": "status",       "order": "ASCENDING" },
+//         { "fieldPath": "price",        "order": "ASCENDING" }
+//       ]
+//     },
+
+//     // ─── books: categorySlug + status + rating ────────────────────────────────
+//     // Used by: category page sort by rating
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "categorySlug", "order": "ASCENDING"  },
+//         { "fieldPath": "status",       "order": "ASCENDING"  },
+//         { "fieldPath": "rating",       "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: categorySlug + status + price (desc) ─────────────────────────
+//     // Used by: category page sort by price high to low
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "categorySlug", "order": "ASCENDING"  },
+//         { "fieldPath": "status",       "order": "ASCENDING"  },
+//         { "fieldPath": "price",        "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: status + level + createdAt ───────────────────────────────────
+//     // Used by: level filter (school, college, competitive, literature)
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "status",    "order": "ASCENDING"  },
+//         { "fieldPath": "level",     "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt", "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: status + language + createdAt ────────────────────────────────
+//     // Used by: language filter (en, hi, both)
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "status",    "order": "ASCENDING"  },
+//         { "fieldPath": "language",  "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt", "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: subcategorySlug + status + createdAt ─────────────────────────
+//     // Used by: getBooksBySubcategory() default sort
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "subcategorySlug", "order": "ASCENDING"  },
+//         { "fieldPath": "status",          "order": "ASCENDING"  },
+//         { "fieldPath": "createdAt",       "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── books: subcategorySlug + status + price ─────────────────────────────
+//     // Used by: subcategory page sort by price
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "subcategorySlug", "order": "ASCENDING" },
+//         { "fieldPath": "status",          "order": "ASCENDING" },
+//         { "fieldPath": "price",           "order": "ASCENDING" }
+//       ]
+//     },
+
+//     // ─── books: subcategorySlug + status + rating ────────────────────────────
+//     // Used by: subcategory page sort by rating
+//     {
+//       "collectionGroup": "books",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "subcategorySlug", "order": "ASCENDING"  },
+//         { "fieldPath": "status",          "order": "ASCENDING"  },
+//         { "fieldPath": "rating",          "order": "DESCENDING" }
+//       ]
+//     },
+
+//     // ─── categories: parentSlug ───────────────────────────────────────────────
+//     // Used by: getTopLevelCategories(), getSubcategories()
+//     {
+//       "collectionGroup": "categories",
+//       "queryScope": "COLLECTION",
+//       "fields": [
+//         { "fieldPath": "parentSlug", "order": "ASCENDING" }
+//       ]
+//     }
+
+//   ],
+
+//   "fieldOverrides": []
+// }

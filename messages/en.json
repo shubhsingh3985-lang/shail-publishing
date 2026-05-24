@@ -1,0 +1,240 @@
+{
+  "common": {
+    "appName": "Shail Publishing",
+    "tagline": "Publishing & Distributor House",
+    "viewAll": "View All",
+    "seeAll": "See All",
+    "loading": "Loading...",
+    "search": "Search",
+    "filter": "Filter",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "back": "Back",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No",
+    "or": "or",
+    "by": "by",
+    "in": "in",
+    "new": "New",
+    "featured": "Featured",
+    "bestseller": "Bestseller",
+    "languages": {
+      "en": "English",
+      "hi": "हिंदी"
+    }
+  },
+
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "adminLogin": "Admin",
+    "searchPlaceholder": "Search books..."
+  },
+
+  "home": {
+    "banner": "New arrivals just landed — Free shipping on orders over ₹499",
+    "hero": {
+      "eyebrow": "India's Premier Educational Publisher",
+      "title": "Discover Knowledge Without Limits",
+      "titleEm": "Knowledge",
+      "subtitle": "Thousands of curated educational books, reference materials, and academic resources — available in Hindi and English.",
+      "searchPlaceholder": "Search by title, author, subject...",
+      "searchAll": "All Books"
+    },
+    "stats": {
+      "books": "Books Available",
+      "authors": "Authors & Educators",
+      "categories": "Subject Categories",
+      "years": "Years of Excellence"
+    },
+    "featured": {
+      "label": "Curated Selection",
+      "title": "Featured Books"
+    },
+    "categories": {
+      "label": "Browse by Subject",
+      "title": "Book Categories"
+    },
+    "editorsPick": {
+      "label": "Editor's Choice",
+      "title": "Featured Titles"
+    },
+    "recent": {
+      "label": "Just Arrived",
+      "title": "Recently Added"
+    },
+    "tabs": {
+      "all": "All",
+      "school": "School",
+      "college": "College",
+      "competitive": "Competitive",
+      "literature": "Literature"
+    }
+  },
+
+  "books": {
+    "pageTitle": "Browse Books",
+    "searchPlaceholder": "Search by title, author, ISBN...",
+    "filterBy": "Filter by",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "newest": "Newest First",
+      "oldest": "Oldest First",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "title": "Title A–Z",
+      "rating": "Highest Rated"
+    },
+    "noResults": "No books found matching your search.",
+    "clearFilters": "Clear Filters",
+    "addToCart": "Add to Cart",
+    "preview": "Preview",
+    "outOfStock": "Out of Stock",
+    "language": "Language",
+    "category": "Category",
+    "author": "Author",
+    "publisher": "Publisher",
+    "isbn": "ISBN",
+    "pages": "Pages",
+    "edition": "Edition",
+    "price": "Price"
+  },
+
+  "categories": {
+    "pageTitle": "Book Categories",
+    "subtitle": "Explore our wide range of subjects",
+    "booksCount": "{{count}} books"
+  },
+
+  "about": {
+    "pageTitle": "About Us",
+    "heroTitle": "Empowering Learners Across India",
+    "heroSubtitle": "Since 1999, Shail Education Institute has been a trusted name in educational publishing.",
+    "mission": {
+      "title": "Our Mission",
+      "body": "To make quality educational resources accessible to every student across India, in the language they are most comfortable with."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "body": "A India where language is never a barrier to learning."
+    }
+  },
+
+  "contact": {
+    "pageTitle": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Your message has been sent. We'll get back to you soon!",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Working Hours"
+    }
+  },
+
+  "footer": {
+    "tagline": "Empowering learners across India with quality educational resources in Hindi and English since 1999.",
+    "quickLinks": "Quick Links",
+    "company": "Company",
+    "support": "Support",
+    "links": {
+      "home": "Home",
+      "browseBooks": "Browse Books",
+      "categories": "Categories",
+      "newArrivals": "New Arrivals",
+      "about": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "help": "Help Center",
+      "shipping": "Shipping Info",
+      "returns": "Returns",
+      "bulk": "Bulk Orders"
+    },
+    "copyright": "© 2025 Shail Education Institute. All rights reserved."
+  },
+
+  "admin": {
+    "title": "Admin Dashboard",
+    "login": {
+      "title": "Admin Access",
+      "subtitle": "Enter your admin key to continue",
+      "keyPlaceholder": "Enter admin key",
+      "loginBtn": "Login",
+      "error": "Invalid admin key. Please try again."
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "books": "Books",
+      "categories": "Categories",
+      "authors": "Authors",
+      "featured": "Featured",
+      "languages": "Languages",
+      "media": "Media",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "dashboard": {
+      "title": "Overview",
+      "totalBooks": "Total Books",
+      "totalAuthors": "Authors",
+      "totalCategories": "Categories",
+      "thisWeek": "+{{count}} this week",
+      "thisMonth": "+{{count}} this month"
+    },
+    "books": {
+      "title": "Manage Books",
+      "addBook": "Add Book",
+      "editBook": "Edit Book",
+      "deleteBook": "Delete Book",
+      "deleteConfirm": "Are you sure you want to delete this book? This cannot be undone.",
+      "fields": {
+        "title": "Book Title",
+        "titleHi": "Title (Hindi)",
+        "author": "Author",
+        "category": "Category",
+        "price": "Price (₹)",
+        "originalPrice": "Original Price (₹)",
+        "language": "Language",
+        "description": "Description",
+        "descriptionHi": "Description (Hindi)",
+        "isbn": "ISBN",
+        "pages": "Number of Pages",
+        "edition": "Edition",
+        "featured": "Mark as Featured",
+        "status": "Status",
+        "coverImage": "Cover Image",
+        "slug": "URL Slug"
+      },
+      "status": {
+        "published": "Published",
+        "draft": "Draft"
+      }
+    }
+  },
+
+  "errors": {
+    "notFound": "Page not found",
+    "notFoundDesc": "The page you're looking for doesn't exist.",
+    "goHome": "Go to Homepage",
+    "serverError": "Something went wrong",
+    "serverErrorDesc": "Please try refreshing the page."
+  }
+}

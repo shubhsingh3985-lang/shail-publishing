@@ -1,0 +1,55 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── books ───────────────────────────────────────────────────────────────
+    // Public can read published books only.
+    // Writes are handled via server-side API routes protected by admin session cookie.
+    // The admin panel never writes directly from the client — it goes through
+    // /api/admin/* routes which verify the cookie before touching Firestore.
+    match /books/{bookId} {
+      allow read: if resource.data.status == "published";
+      allow write: if false; // all writes via API routes only
+    }
+
+    // ─── categories ──────────────────────────────────────────────────────────
+    // Public can read all categories (top-level and subcategories).
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ─── authors ─────────────────────────────────────────────────────────────
+    // Public can read all authors.
+    match /authors/{authorId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ─── settings ────────────────────────────────────────────────────────────
+    // Public can read site settings (banner text, contact info etc).
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ─── Deny everything else ────────────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+// ─── NOTE: During seeding only ───────────────────────────────────────────────
+// Temporarily replace the above with the following while running `npm run seed`,
+// then restore the real rules immediately after:
+//
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /{document=**} {
+//       allow read, write: if true;
+//     }
+//   }
+// }
