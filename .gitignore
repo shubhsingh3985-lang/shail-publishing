@@ -72,5 +72,3 @@ coverage/
 .tmp/
 *.tgz
 
-
-git remote add origin https://github.com/shubhsingh3985-lang/shail-publishing.git  
