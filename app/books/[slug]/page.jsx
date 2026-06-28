@@ -4,8 +4,9 @@ import { useParams }                    from 'next/navigation'
 import Link                             from 'next/link'
 import Header                           from '@/components/layout/Header'
 import Footer                           from '@/components/layout/Footer'
-import BookCard                         from '@/components/books/BookCard'
-import { Skeleton, BookGridSkeleton }   from '@/components/ui/Skeleton'
+import BookCard                        from '@/components/books/BookCard'
+import BookCover                       from '@/components/books/BookCover'
+import { Skeleton, BookGridSkeleton }  from '@/components/ui/Skeleton'
 import { useLanguage }                  from '@/lib/context/LanguageContext'
 import { useBook, useAllBooks }         from '@/lib/hooks/useBooks'
 import { useCategory }                  from '@/lib/hooks/useCategories'
@@ -145,18 +146,15 @@ export default function BookDetailPage() {
 
               {/* Left: cover + buy */}
               <div className="flex flex-col gap-4">
-                <div className="rounded-2xl overflow-hidden aspect-[2/3] flex flex-col items-center justify-center p-6 relative"
-                  style={{ background: `linear-gradient(145deg, ${c1}, ${c2})` }}>
-                  {book.badge && (
-                    <div className="absolute top-4 right-4 text-[10px] font-bold tracking-wider uppercase px-2 py-1 rounded-lg"
-                      style={{ background: book.badge==='new'?'var(--color-gold)':'var(--color-crimson)', color: book.badge==='new'?'#0F0E0D':'#fff' }}>
-                      {isHindi ? BADGE_LABELS[book.badge]?.hi : BADGE_LABELS[book.badge]?.en}
-                    </div>
-                  )}
-                  <p className="font-serif text-lg font-bold text-center text-white/90 leading-snug mb-3">{book.title?.en}</p>
-                  <div className="w-10 h-0.5 opacity-60 mb-3" style={{ background: 'var(--color-gold)' }} />
-                  <p className="text-[11px] tracking-wider uppercase text-white/50 text-center">{book.author}</p>
-                </div>
+              {/* Cover — real image or gradient */}
+              <div className="rounded-2xl overflow-hidden aspect-[2/3]">
+                <BookCover
+                  book={book}
+                  className="w-full h-full"
+                  sizes="(max-width: 1024px) 50vw, 280px"
+                  priority
+                />
+              </div>
 
                 <div className="card p-5 flex flex-col gap-4">
                   <div>

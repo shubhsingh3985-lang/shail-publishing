@@ -6,6 +6,7 @@ import Link                             from 'next/link'
 import Header                           from '@/components/layout/Header'
 import Footer                           from '@/components/layout/Footer'
 import BookCard                         from '@/components/books/BookCard'
+import BookCover                         from '@/components/books/BookCover'
 import { BookGridSkeleton }             from '@/components/ui/Skeleton'
 import { useLanguage }                  from '@/lib/context/LanguageContext'
 import { useAllBooks }                  from '@/lib/hooks/useBooks'
@@ -312,13 +313,18 @@ function PageBtn({ label, onClick, disabled }) {
 }
 
 function BookListRow({ book, isHindi, lang }) {
-  const [c1, c2] = book.coverGradient ?? ['#1a1a2e','#16213e']
-  const title    = isHindi && book.title?.hi ? book.title.hi : book.title?.en
-  const desc     = isHindi && book.description?.hi ? book.description.hi : book.description?.en
+  const title = isHindi && book.title?.hi ? book.title.hi : book.title?.en
+  const desc  = isHindi && book.description?.hi ? book.description.hi : book.description?.en
   return (
-    <Link href={`/books/${book.slug}${lang !== 'en' ? `?lang=${lang}` : ''}`} className="card p-4 flex gap-4 hover:-translate-y-0.5 hover:border-[var(--color-gold)]">
-      <div className="w-14 h-[84px] rounded-lg flex-shrink-0 flex items-center justify-center p-1.5" style={{ background: `linear-gradient(135deg,${c1},${c2})` }}>
-        <p className="font-serif text-[9px] text-white/80 text-center leading-tight">{book.title?.en}</p>
+    <Link href={`/books/${book.slug}${lang !== 'en' ? `?lang=${lang}` : ''}`} className="card p-4 flex gap-4 hover:-translate-y-0.5 hover:border-[var(--color-gold)] focus-gold group">
+      {/* Cover */}
+      <div className="w-14 h-[84px] rounded-lg flex-shrink-0 overflow-hidden">
+        <BookCover
+          book={book}
+          className="w-full h-full"
+          sizes="56px"
+          showBadge={false}
+        />
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">

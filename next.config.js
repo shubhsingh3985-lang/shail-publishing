@@ -2,14 +2,17 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      // Firebase Storage — enable when Firestore is activated
-      // {
-      //   protocol: 'https',
-      //   hostname: 'firebasestorage.googleapis.com',
-      // },
+      // Firebase Storage — book cover images uploaded via admin panel
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+      },
+      // Firebase Storage alternate domain
+      {
+        protocol: 'https',
+        hostname: '*.appspot.com',
+      },
     ],
-    // Allows local /public images without configuration
-    unoptimized: false,
   },
 
   // Security headers

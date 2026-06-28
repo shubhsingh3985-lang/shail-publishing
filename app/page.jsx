@@ -6,6 +6,7 @@ import Link                      from 'next/link'
 import Header                    from '@/components/layout/Header'
 import Footer                    from '@/components/layout/Footer'
 import BookCard                  from '@/components/books/BookCard'
+import BookCover                 from '@/components/books/BookCover'
 import { BookGridSkeleton, CategoryGridSkeleton, BookStripSkeleton, FeaturedBookSkeleton } from '@/components/ui/Skeleton'
 import { useLanguage }           from '@/lib/context/LanguageContext'
 import { useFeaturedBooks }      from '@/lib/hooks/useBooks'
@@ -242,9 +243,14 @@ export default function HomePage() {
                     const desc     = isHindi && book.description?.hi ? book.description.hi : book.description?.en
                     return (
                       <div key={book.id} className="card p-5 flex gap-4 hover:border-[var(--color-gold)] hover:-translate-y-0.5">
-                        <div className="w-20 h-[120px] rounded-lg flex-shrink-0 flex flex-col items-center justify-center p-2"
-                          style={{ background: `linear-gradient(135deg, ${c1}, ${c2})` }}>
-                          <p className="font-serif text-[10px] font-bold text-center text-white/90 leading-tight">{book.title?.en}</p>
+                        {/* Mini cover */}
+                        <div className="w-20 h-[120px] rounded-lg flex-shrink-0 overflow-hidden">
+                          <BookCover
+                            book={book}
+                            className="w-full h-full"
+                            sizes="80px"
+                            showBadge={false}
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-2xs font-semibold tracking-widest uppercase mb-1.5" style={{ color: 'var(--color-gold)' }}>{isHindi ? 'विशेष' : 'Featured'}</p>
@@ -283,13 +289,16 @@ export default function HomePage() {
               {recentLoading
                 ? Array.from({ length: 8 }).map((_, i) => <BookStripSkeleton key={i} />)
                 : recentBooks.map(book => {
-                    const [c1, c2] = book.coverGradient ?? ['#1a1a2e', '#16213e']
-                    const title    = isHindi && book.title?.hi ? book.title.hi : book.title?.en
+                    const title = isHindi && book.title?.hi ? book.title.hi : book.title?.en
                     return (
                       <Link key={book.id} href={langHref(`/books/${book.slug}`)} className="flex-shrink-0 w-24 group">
-                        <div className="w-24 aspect-[2/3] rounded-lg mb-2 flex items-center justify-center p-2 transition-transform group-hover:-translate-y-1"
-                          style={{ background: `linear-gradient(145deg, ${c1}, ${c2})` }}>
-                          <p className={cn('text-[9px] text-white/80 text-center leading-tight font-serif', isHindi && 'font-hindi')}>{title}</p>
+                        <div className="w-24 aspect-[2/3] rounded-lg mb-2 overflow-hidden">
+                          <BookCover
+                            book={book}
+                            className="w-full h-full transition-transform group-hover:-translate-y-1"
+                            sizes="96px"
+                            showBadge={false}
+                          />
                         </div>
                         <p className={cn('text-xs font-medium leading-tight line-clamp-2', isHindi && 'font-hindi')} style={{ color: 'var(--color-text-primary)' }}>{title}</p>
                         <p className="text-[10px] mt-0.5 truncate" style={{ color: 'var(--color-text-muted)' }}>{book.author}</p>

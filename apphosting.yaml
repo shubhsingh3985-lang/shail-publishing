@@ -41,3 +41,8 @@ env:
     availability:
       - BUILD
       - RUNTIME
+
+  - variable: ADMIN_KEY_HASH
+    secret: ADMIN_KEY_HASH
+    availability:
+      - RUNTIME
